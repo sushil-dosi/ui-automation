@@ -7,6 +7,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.equalTo;
+
 public class SignUpTest extends BasePage {
 
     private SignUpPage SignUpPage;
@@ -16,8 +19,9 @@ public class SignUpTest extends BasePage {
     }
 
     @Test
-        public void SignUpTest()
-        {
+
+    public void SignUpTest(){
+
             String firstname = "Test";
             String lastname = "QA";
             String email = "Test123@gmail.com";
@@ -26,6 +30,7 @@ public class SignUpTest extends BasePage {
             SignUpPage Signup = new SignUpPage(driver);
             Signup.signUpPage(firstname, lastname, email, username, password);
 
+        assertThat(driver.getCurrentUrl(),equalTo("https://www.website.com/sign-up/"));
         }
     }
 
