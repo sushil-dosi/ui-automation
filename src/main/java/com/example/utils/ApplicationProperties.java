@@ -20,4 +20,8 @@ public enum  ApplicationProperties {
     public String getBaseUrl() {
         return properties.getProperty("baseUrl");
     }
+
+    public String getDriverPath() {
+        return properties.getProperty("driverPath");
+    }
 }
