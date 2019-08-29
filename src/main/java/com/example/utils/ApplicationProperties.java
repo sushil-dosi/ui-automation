@@ -24,4 +24,8 @@ public enum  ApplicationProperties {
     public String getDriverPath() {
         return properties.getProperty("driverPath");
     }
+
+    public String getFacebookBaseUrl() {
+        return properties.getProperty("facebookBaseUrl");
+    }
 }

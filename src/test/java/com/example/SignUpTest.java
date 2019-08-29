@@ -12,7 +12,7 @@ public class SignUpTest extends BaseTest{
     private SignUpPage signUpPage;
 
     @Test
-    public void signUpTest() throws InterruptedException {
+    public void signUpTest() {
         signUpPage = new SignUpPage(driver);
         signUpPage.selectFreePlan();
         String actualStep2Url = driver.getCurrentUrl();
@@ -27,12 +27,8 @@ public class SignUpTest extends BaseTest{
 
         signUpPage = new SignUpPage(driver,actualStep2Url);
         signUpPage.signUpStep2(firstName,lastName,username,email,password);
-        Thread.sleep(3000l);
         String actualStep3Url = driver.getCurrentUrl();
         String step3Url = actualStep3Url.substring(0,actualStep3Url.indexOf("?"));
         assertThat(step3Url,equalTo("https://www.website.com/sign-up/step-2/"));
-
-
-
     }
 }
