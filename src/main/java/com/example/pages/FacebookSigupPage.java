@@ -68,8 +68,10 @@ public class FacebookSigupPage extends  BasePage {
         switch (gender){
             case "F":
                 femaleRadioBtn.click();
+                break;
             case "M":
                 maleRadioBtn.click();
+                break;
             default:
                 maleRadioBtn.click();
         }
