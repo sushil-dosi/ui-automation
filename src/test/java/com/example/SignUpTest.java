@@ -1,34 +1,34 @@
 package com.example;
-
 import com.example.pages.BasePage;
 import com.example.pages.LoginPage;
 import com.example.pages.SignUpPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
-
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 
-public class SignUpTest extends BasePage {
+public class SignUpTest extends BaseTest {
 
     private SignUpPage SignUpPage;
 
-    public SignUpTest(WebDriver driver) {
-        super(driver);
-    }
 
     @Test
+    public void signUpTest() {
 
-    public void SignUpTest(){
+        String fname=  "Pankaj";
+        String lname=  "QA";
+        String email=  "test@gmail.com";
+        String uname=  "Tester7";
+        String pwd=    "lise1234";
 
-            String firstname = "Test";
-            String lastname = "QA";
-            String email = "Test123@gmail.com";
-            String username = "Lise";
-            String password = "Test@1234";
-            SignUpPage Signup = new SignUpPage(driver);
-            Signup.signUpPage(firstname, lastname, email, username, password);
+        SignUpPage signUpPage = new SignUpPage(driver);
+        signUpPage.clickSignUpButton();
+        signUpPage.clickSelectButton();
+        System.out.println("--------" + driver.getCurrentUrl());
+
+        signUpPage.signup(fname,lname,email,uname,pwd);
+
 
         assertThat(driver.getCurrentUrl(),equalTo("https://www.website.com/sign-up/"));
         }

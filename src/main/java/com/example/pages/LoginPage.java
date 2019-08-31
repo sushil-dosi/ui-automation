@@ -17,7 +17,7 @@ public class LoginPage extends BasePage {
     @FindBy(id="signin-submit2")
     private WebElement loginButton;
 
-    private String url = ApplicationProperties.INSTANCE.getBaseUrl() + "sign-in/";
+    private String url = ApplicationProperties.INSTANCE.getBaseUrl() + "sign-up/";
 
     public LoginPage(WebDriver driver) {
         super(driver);
